@@ -1,0 +1,97 @@
+Today:
+
+1. Experience sharing on AWS journey so far
+	- Identity and Access Management OK
+	- Networking    OK
+	- Compute	OK 
+	- Storage
+	- RDS (Databases)----> sql and nosql (dynamoDB) 
+Linux commands, AWS CLI, CDK (automation) 
+2. General overview of AWS Services
+3. Short Overview on Compute
+4. AWS storage (EBS, EFS, FXs, S3, RDS)
+	Block Storage ====> Elastic Block Storage(EBS) ==>Persistent
+	File System  ====> EFS (Linux), FXs(Windows)
+	Databases [RDS] ===> Oracle, MariaDB, Mysql, Postgres, etc
+	Object Storage =====> Simple Storage Service (S3) 
+	
+5. Introduction to S3
+	- What is S3 
+Amazon Simple Storage Service (Amazon S3) is -
+- an object storage service 
+- that offers industry-leading
+	- scalability, 
+	- data availability, 
+	- security, and 
+	- performance. 
+Files ====> Object[data, metadata]
+Photos
+videos
+
+
+What are the different S3 storage classes:
+1. S3 Standard for frequently accessed data 
+	- Low latency and high throughput performance
+	- Designed for durability of 99.999999999% of objects across multiple Availability Zones
+	- Designed for 99.99% availability over a given year
+
+2. Amazon S3 Standard-Infrequent Access (S3 Standard-IA)
+	- Same low latency and high throughput performance of S3 Standard
+	- Designed for durability of 99.999999999% of objects across multiple Availability Zones
+	- Designed for 99.9% availability over a given year
+
+3. Amazon S3 Intelligent-Tiering (S3 Intelligent-Tiering)
+	- The Infrequent Access tier saves up to 40% on storage costs
+	- The Archive Instant Access tier saves up to 68% on storage costs
+	- Deep Archive Access tier has the same performance as Glacier Deep Archive and saves up to 95% for rarely accessed object
+	- Designed for durability of 99.999999999% of objects across multiple Availability Zones and for 99.9% availability over a given year
+	- No operational overhead, no lifecycle charges, no retrieval charges, and no minimum storage duration
+	
+4. Amazon S3 Glacier Instant Retrieval
+	- Data retrieval in milliseconds with the same performance as S3 Standard
+	- Designed for durability of 99.999999999% of objects across multiple Availability Zones
+	- Designed for 99.9% data availability in a given year
+	- 128 KB minimum object size
+5. Amazon S3 Glacier Flexible Retrieval (Formerly S3 Glacier)
+	- Designed for durability of 99.999999999% of objects across multiple Availability Zones
+	- S3 Glacier Flexible Retrieval delivers low-cost storage, up to 10% lower cost (than S3 Glacier Instant Retrieval)
+	- Archive data that is accessed 1—2 times per year
+	- 99.99% availability
+
+6. Amazon S3 Glacier Deep Archive
+ 	- Designed for durability of 99.999999999% of objects across multiple Availability Zones
+	- Lowest cost storage class designed for long-term retention of data that will be retained for 7-10 years
+	- Retrieval time within 12 hours
+
+7. Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)
+	- S3 One Zone-IA is for data that is accessed less frequently, but requires rapid access when needed.
+	- Unlike other S3 Storage Classes which store data in a minimum of three Availability Zones (AZs), 
+	- S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA. 
+	- Same low latency and high throughput performance of S3 Standard
+	- Designed for durability of 99.999999999% of objects in a single Availability Zone†
+	- Designed for 99.5% availability over a given year
+
+
+
+
+Access
+	-
+
+Projects
+1 Mini projects
+	a) Create a website with static and dynamic content
+		- EC2
+		- ALB, ASG, TG
+		- Route 53
+		- EFS
+		- S3
+		- Cloudfront 
+	b) Create a LAMP stack
+Create Github reposit
+2 Major Project 
+
+
+const vpc = ec2.Vpc.fromLookup(this, 'MyVpc', { isDefault: true });
+
+const vpc = new ec2.Vpc(this, 'MyVpc', { maxAzs: 2 });
+
